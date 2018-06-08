@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>positions</title>
+	<style type="text/css">
+		.main{
+			width:600px;
+			margin:auto;
+			background-color: steelblue;
+			height: 1500px;
+			position: relative;
+		}
+		.box{
+			width:200px;
+			height:200px;
+
+		}
+		.box1{
+			position:relative;
+			left:100px;
+			top:150px;
+			background-color: lightgreen;
+			z-index: 1;
+		}
+		.box2{
+			position:absolute;
+			left:10px;
+			top:10px;
+			background-color: lightgrey;
+			z-index:2;
+		}
+		.box3{
+			position:fixed;
+			right:20px;
+			top:300px;
+
+			background-color: lightblue;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class="main">
+		<div class="box box1"></div>
+		<div class="box box2"></div>
+		<div class="box box3"></div>
+	</div>
+</body>
+</html>
