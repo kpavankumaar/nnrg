@@ -1,0 +1,33 @@
+html,body,ul,li,ol,p,h1,h2,h3,h4,h5,h6, blockquote,pre{
+	margin:0px;
+	padding:0px;
+}
+ul li{
+	list-style-type: none;
+	float:left;
+	margin-left:25px;
+}
+ul::after , ul::before {
+	content:'';
+	display: block;
+	clear:both;
+}
+.main{
+	width:900px;
+	margin:auto;	
+}
+.main div:nth-child(2n + 0){
+	background-color: lightgreen;
+}
+.main div{
+	width:300px;
+
+	float:left;	
+}
+
+
+
+
+
+
+
