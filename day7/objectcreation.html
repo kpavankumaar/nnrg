@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Object creation</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function Cosmetics(item1,item2,item3){
+			this.soap = item1;
+			this.perfumes = item2;
+			this.oils = item3;
+			this.cosmeticsInfo = function(){
+				console.log(this.soap+ this.perfumes + this.oils);
+			}
+		}
+
+		function Order(cosmetics,groceries,clothes){
+			// Cosmetics.call(this,'Dettol','Fogg','Parachute');
+			Cosmetics.apply(this,cosmetics);
+
+			this.groceries = groceries;
+			this.clothes = clothes;
+
+		}
+		var order1 = new Order(['Dettol','Fogg','Parachute'],'item2','item3');
+		var CosmeticsOrder = {};
+		var cosmeticsOrderProcess= Cosmetics.bind(CosmeticsOrder,
+			'pears','axe');
+		cosmeticsOrderProcess('himalaya');
+				
+
+		// var cosmeticsOrder = new Cosmetics('pears','axe');
+
+	</script>
+</body>
+</html>

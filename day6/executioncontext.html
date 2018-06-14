@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Executioncontext</title>
+</head>
+<body>
+	<script type="text/javascript">
+		console.log(b)
+		var a = 10 ;
+		var b = a;
+		c();
+		function c (){
+			var b = 30;
+			console.log(b);
+		}
+		function d(){
+			c();
+			console.log(b);
+		}
+		var e = function(){
+			b = 25;
+			d();
+			console.log(b);
+		}
+		e();
+		
+
+	</script>
+</body>
+</html>

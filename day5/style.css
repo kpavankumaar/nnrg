@@ -1,0 +1,52 @@
+html,body,ul,li,ol,p,h1,h2,h3,h4,h5,h6, blockquote,pre{
+	margin:0px;
+	padding:0px;
+}
+ul li{
+	list-style-type: none;
+	float:left;
+	margin-left:25px;
+}
+ul::after , ul::before {
+	content:'';
+	display: block;
+	clear:both;
+}
+.main{
+	width:70.3125%;/*900px;*/
+	margin:auto;
+	border:2px solid black;	
+}
+.main::after,.main::before{
+	content:'';
+	display:block;
+	clear:both;
+}
+.main div:nth-child(2n + 0){
+	/*background-color: lightgreen;*/
+}
+
+.main div{
+	width:33.33333333%;/*300px;*/
+	float:left;	
+}
+
+.main .box4,.main .box5{
+	width:100%;/*900px;*/
+}
+@media screen and (max-width:1105px){
+	div.box1, div.box2 {
+		width:50%;
+	}
+	div.box3{
+		width:100%;
+	}
+}
+@media screen and (max-width:960px){
+	div.box1 ,div.box2{
+		width:100%;
+	}
+}
+
+
+

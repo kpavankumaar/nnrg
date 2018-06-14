@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Object creation</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var a = 10;
+		var b = a ;
+		b = 20 ;
+		console.log(a);
+		var bottle = {
+			make: 'plastic',
+			size: '1 lt',
+			storewater: function(){
+				console.log(this);
+				var selfThis = this;
+				function run(){
+					console.log(selfThis);
+				}
+				run();
+			}
+		}
+		// var floraBottle = bottle;
+		// floraBottle.make = 'glass';
+		// console.log(bottle.make);
+
+		function createBottle(name,make,size){
+			this.brandname = name;
+			this.make = make;
+			this.size = size;
+		}
+		createBottle('Flora','plastic','1lt');
+		
+
+
+	</script>
+</body>
+</html>
