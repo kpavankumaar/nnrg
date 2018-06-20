@@ -17,27 +17,28 @@
 			console.log(this.soap+ this.perfumes + this.oils);
 		}
 
-
 		function Order(cosmetics,groceries,clothes){
 			// Cosmetics.call(this,'Dettol','Fogg','Parachute');
 			Cosmetics.apply(this,cosmetics);
-
 			this.groceries = groceries;
 			this.clothes = clothes;
-
 		}
+
+		Order.prototype = Object.create(Cosmetics.prototype);
 		Order.prototype.generalOrderDetails = function(){
 				console.log(this.soap+ this.perfumes + this.oils);
-			}
+		}
+		Order.prototype.constructor = Order;
 		var order1 = new Order(['Dettol','Fogg','Parachute'],'item2','item3');
 		var order2 = new Order(['order2item1'], 'order2item2','order2item3');
 		var CosmeticsOrder = {};
-		var cosmeticsOrderProcess= Cosmetics.bind(CosmeticsOrder,
-			'pears','axe');
+		var cosmeticsOrderProcess= Cosmetics.bind(CosmeticsOrder,'pears','axe');
 		cosmeticsOrderProcess('himalaya');
 				
+		order2.generalOrderDetails = function(){
+			console.log(this.groceries);
+		}
 		
-		// var cosmeticsOrder = new Cosmetics('pears','axe');
 
 	</script>
 </body>

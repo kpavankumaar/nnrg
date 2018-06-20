@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gallery</title>
+</head>
+<body>
+	<ul>
+		<li><a href="http://www.google.com"><img src="images/download-1.jpg"></a></li>
+		<li><img src="images/download-2.jpg"></li>
+		<li><img src="images/download-3.jpg"></li>
+		<li><img src="images/download-4.jpg"></li>
+		<li><img src="images/download-5.jpg"></li>
+		<li><img src="images/download.jpg"></li>
+	</ul>
+	<ul></ul>
+	<script type="text/javascript">
+		var ulEl = document.getElementsByTagName('ul')[0];
+		var liEl = document.getElementsByTagName('li')[0];
+		// console.log(popUp);
+		function createPopUp(e){
+			e.preventDefault();
+			e.stopPropagation();
+			console.log('clicked on ul el')
+			var popUp  = document.getElementById('popup');
+			if(popUp){
+				var imageEl = popUp.querySelector('img');
+				imageEl.setAttribute('src',e.target.src)
+			}else{
+				console.log(e);
+				var popup = document.createElement('div');
+				var imgEl = document.createElement('img');
+				popup.setAttribute('id','popup')
+				imgEl.setAttribute('src', e.target.src);
+				popup.appendChild(imgEl);
+				document.body.appendChild(popup);
+				popup.style.position = 'absolute';
+				popup.style.left = '40%';
+				popup.style.top = '30%';
+			}
+		}
+		// ulEl.onclick = createPopUp;	
+		ulEl.addEventListener('click',createPopUp,true);
+		liEl.addEventListener('click',function(){
+			console.log('clicked on li element')
+		},true);
+
+	</script>
+</body>
+</html>
