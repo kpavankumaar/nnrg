@@ -18,10 +18,27 @@ var addBtn = document.getElementsByTagName('button')[0];
 var addTask = document.getElementsByName('AddTask')[0];
 var incompleteDivSection = document.getElementById('todolist');
 var completeDivSection = document.getElementById('completedlist');
+var flag = true;
 console.log(addBtn);
 
 function editTask(){
 	console.log(this);
+	var labelEl = this.parentNode.querySelector('label');
+	var inputText  = this.parentNode.querySelector('input[type=text]');
+	console.log(inputText.style.display);
+	console.log(labelEl.style.display);
+	if(inputText.style.display === ''|| inputText.style.display === 'none'){
+		
+		inputText.value = labelEl.innerText;	
+		inputText.style.display = 'inline';
+		labelEl.style.display = 'none';
+	}else{
+		labelEl.innerText = inputText.value;	
+		inputText.style.display = 'none';
+		labelEl.style.display = 'inline';
+	}
+	
+
 }
 function deleteTask(){
 	console.log(this)
@@ -38,8 +55,10 @@ function moveTask(){
 	}
 	
 }
+
 function createTask(){
 	console.log('createTask');
+	
 	var parentForTask = document.createElement('div');
 	var inputCheckBox = document.createElement('input');
 	var inputText = document.createElement('input');
