@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	function customerInfo(name){
+		return function (language){
+			console.log(name + ' knows '+ language);	
+		}
+		
+	}
+	var person1 = customerInfo('ravi');
+	person1('telugu');
+</script>
+</body>
+</html>

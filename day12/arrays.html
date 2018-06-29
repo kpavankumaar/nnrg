@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<button onclick = 'myFn()      '>stop the count</button>
+	<script type="text/javascript">
+		var arr = [1,2,3,4,5];
+		arr.shift();
+		arr.pop();
+		arr.push(10);
+		arr.unshift(11);
+		var arr1 = [1,2,3,4,5,6];
+		var arr2 = arr1.slice(2,4);
+		console.log(arr);
+		var arr3 = arr1.splice(2,2,15);
+		var newarr = [2,3,4,5]
+
+		newarr1 = [1,10]
+
+		newarr.concat(newarr1)//(6) [2, 3, 4, 5, 1, 10]	
+		var newarr2 = [4,6,2,5,9,1,7,3,8,10];
+		newarr2.sort(function(firstval,nextval){
+			return firstval - nextval
+		});
+		var employeeslist = [{id:1},{id:2},{id:3},{id:4},{id:5}]
+		var emp2 = employeeslist.find(function(obj){ 
+			console.log(obj);
+			if(obj.id === 3 ){
+				return obj;	
+			}
+			
+		})
+		var intervalFn = setInterval(function(){
+			console.log('print this statement every 5 sec ')
+		},5000);
+		setTimeout(function(){
+			console.log('print this statement after 5 sec ')
+		},5000);
+		var myFn = function(){
+			console.log('stop');
+			clearInterval(intervalFn);
+		}
+	</script>
+</body>
+</html>

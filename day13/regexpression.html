@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>regex </title>
+</head>
+<body>
+	<script type="text/javascript">
+		var arr = [];
+		var str =" this is a #AAFF99 text color and we want to change the color to #999"
+		
+		var regEx = /\b#?[A-Fa-f0-9]{6}\b|\b#?[A-Fa-f0-9]{3}\b/ig
+		var match;
+		while((match = regEx.exec(str)) != null){
+			debugger;
+			arr.push(match);
+		}
+	</script>
+</body>
+</html>

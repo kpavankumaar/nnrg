@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<table id="tablecontent" border>
+		<thead>
+			<th>Id</th>
+			<th>User Id</th>
+			<th>Title</th>
+			<th>Content</th>
+		</thead>
+	</table>
+	<script type="text/javascript">
+		var xhr = new XMLHttpRequest();
+		console.log('UNSENT', xhr.readyState); // readyState will be 0
+		var url ='https://jsonplaceholder.typicode.com/posts';
+		var responseData;
+
+		xhr.open('GET',url,true);
+		console.log('OPENED', xhr.readyState); // readyState will be 1
+		
+		xhr.onreadystatechange = function(){
+			if (xhr.readyState == 4) {
+				if(xhr.status == 200){
+					response = xhr.response;
+					console.log(xhr.response);
+					// var re = /\},/ig;
+					responseData = JSON.parse(xhr.response);
+					createTable()
+
+
+					// console.log(xhr.response.split());
+					// console.log('match', match);
+					// console.log(xhr.response);
+				}
+			}
+		};
+		var tableForData = document.getElementById("tablecontent");
+		
+
+		function createTable(){
+			responseData.find(function(event){	
+
+				var tableRow = document.createElement('tr'); 
+				var tableColumn1 = document.createElement('td'); 
+				var tableColumn2 = document.createElement('td'); 
+				var tableColumn3 = document.createElement('td'); 
+				var tableColumn4 = document.createElement('td'); 
+				tableColumn1.innerText = event.id;
+				tableColumn2.innerText = event.userId;
+				tableColumn3.innerText = event.title;
+				tableColumn4.innerText = event.body;
+				tableRow.appendChild(tableColumn1);
+				tableRow.appendChild(tableColumn2);
+				tableRow.appendChild(tableColumn3);
+				tableRow.appendChild(tableColumn4);
+
+				tableForData.appendChild(tableRow);
+				document.body.appendChild(tableForData);
+
+			})
+		}	
+		xhr.onprogress = function () {
+		    console.log('LOADING', xhr.readyState); // readyState will be 3
+		};
+
+		xhr.onload = function () {
+		    console.log('DONE', xhr.readyState); // readyState will be 4
+		};
+
+		xhr.send();// readystate will be 2 
+
+		
+
+	</script>
+</body>
+</html>
