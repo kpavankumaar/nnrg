@@ -10,4 +10,8 @@ export class AppComponent {
   srcpath = 'favicon.ico';
   color = 'red';
   username = 'Ravi';
+  // inputFieldValue = '';
+  changeColor() {
+    this.color = this.color === 'red' ? 'blue' : 'red';
+  }
 }

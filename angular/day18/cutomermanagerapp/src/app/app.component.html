@@ -1,5 +1,15 @@
+<app-navbar></app-navbar>
 <h1>
   Welcome to {{ title }}!
 </h1>
-<img [src]= 'srcpath' alt="" >
-<input type="text" [value] = 'username'>
+<img src="{{srcpath}}" alt=""><br>
+<img [src]= 'srcpath' alt="" ><br>
+<input type="text" [value] = 'username' (input) = 'username = $event.target.value'><br>
+<input type="text" #selected (keyup) = 'username = selected.value' ><br>
+<input type="text" #selected1 (blur) = 'username = selected1.value' ><br>
+<input type="text" #selected2 (keyup.enter)='username = selected2.value'><br>
+<input type="text" [(ngModel)] = 'username'>
+<p [style.color]= 'color'>Welcome to angularjs classes {{username}}</p>
+<button (click) = 'changeColor()' >Toggle color</button>
+<!-- <app-customerscomponent></app-customerscomponent> -->
+<router-outlet></router-outlet>
