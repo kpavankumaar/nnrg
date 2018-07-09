@@ -11,21 +11,13 @@ import { CustomersModule } from './customers/customers.module';
 import { CoreModule } from './core/core.module';
 import { OrdersModule } from './orders/orders.module';
 import { CustomersDetails } from './core/services/data.service';
-import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule,
-    FormsModule,
-    RouterModule.forRoot(routes),
-    SharedModule,
-    CustomersModule,
-    CoreModule,
-    OrdersModule
-  ],
+    BrowserModule, FormsModule, RouterModule.forRoot(routes), CustomersModule, CoreModule, OrdersModule],
   providers: [],
   bootstrap: [AppComponent]
 })

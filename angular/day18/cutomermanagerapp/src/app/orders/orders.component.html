@@ -1,0 +1,22 @@
+<h3>Customer orders </h3>
+<div class="col-sm-6" *ngFor = "let cust of totalValArray">
+    <div>
+        <h3>{{cust.firstName}}</h3>
+        <table class="table table-striped">
+            <tbody>
+                <tr *ngFor = 'let order of cust.orders'>
+                    
+                    
+                    <td>{{order.productName}}</td>
+                    <td>{{order.itemCost}}</td>
+                </tr>
+                <tr>
+                   <td>Total</td> 
+                   <td>{{cust.totalValue | currency:'INR'}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- <app-pagination></app-pagination> -->
+     
+</div>

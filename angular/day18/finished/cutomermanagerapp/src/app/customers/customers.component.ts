@@ -12,15 +12,10 @@ export class CustomersComponent implements OnInit {
     ngOnInit() {
 
         this.customers = this.customersDetails.getCustomersData();
-        console.log(this.customers);
         // this.customers = [{ 'name': 'ravi' }, { 'name': 'pavn' }];
+        
         // console.log(JSON.parse(this.customers));
         // console.log(JSON.stringify(this.customers));
     }
-    updateCustomers($event) {
-        this.customers = $event;
-
-    }
-
 }
 
